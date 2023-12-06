@@ -1,20 +1,37 @@
-import { NavLink } from 'react-router-dom';
-import { styled } from 'styled-components';
+import styled from 'styled-components';
 
-export const AppList = styled.ul`
+export const Layout = styled.div`
   display: flex;
-  align-items: center;
+  flex-direction: column;
   gap: 20px;
-  padding: 10px;
-  height: 40px;
-  border: 1px solid black;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 15px;
 `;
 
-export const StyledLink = styled(NavLink)`
-  color: black;
-  text-decoration: none;
+export const headerStyle = {
+  backgroundColor: '#333',
+  padding: '10px 0',
+};
 
-  &.active {
-    color: red;
-  }
-`;
+export const ulStyle = {
+  listStyle: 'none',
+  padding: 0,
+  margin: 0,
+  display: 'flex',
+  justifyContent: 'center',
+};
+
+export const liStyle = {
+  marginRight: '20px',
+};
+
+export const linkStyle = {
+  textDecoration: 'none',
+  color: 'white',
+  fontWeight: 'bold',
+};
+
+export const mainStyle = {
+  padding: '20px',
+};

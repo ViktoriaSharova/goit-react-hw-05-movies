@@ -1,27 +1,36 @@
+import React from 'react';
 import { Outlet } from 'react-router-dom';
 import { Suspense } from 'react';
-import { AppList, StyledLink } from './AppLayout.styled';
+import { Layout,
+  headerStyle,
+  liStyle,
+  linkStyle,
+  mainStyle,
+  ulStyle } from './AppLayout.styled';
+import { NavLink, Outlet } from 'react-router-dom';
+import { Suspense } from 'react';  
+
 export const AppLayout = () => {
   return (
-    <>
-      <header>
+    <Layout>
+      <header style={headerStyle}>
         <nav>
-          <AppList>
-            <li>
-              <StyledLink to="/">Home</StyledLink>
+          <ul style={ulStyle}>
+            <li style={liStyle}>
+              <NavLink to="/" style={linkStyle}>Home</NavLink>
             </li>
-            <li>
-              <StyledLink to="/movies">Movies</StyledLink>
+            <li style={liStyle}>
+              <NavLink to="/movies" style={linkStyle}>Movies</NavLink>
             </li>
-          </AppList>
+          </ul>
         </nav>
       </header>
-      <main>
+      <main style={mainStyle}>
         <Suspense fallback={<div>LOADING PAGE...</div>}>
           <Outlet />
         </Suspense>
       </main>
       {/* <GlobalStyle /> */}
-    </>
+    </Layout>
   );
 };
