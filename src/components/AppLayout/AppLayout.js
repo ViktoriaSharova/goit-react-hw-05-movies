@@ -6,7 +6,8 @@ import { Layout,
   mainStyle,
   ulStyle } from './AppLayout.styled';
 import { NavLink, Outlet } from 'react-router-dom';
-import { Suspense } from 'react';  
+import { Suspense } from 'react'; 
+import { GlobalStyle } from '../Global.styled';
 
 export const AppLayout = () => {
   return (
@@ -28,7 +29,7 @@ export const AppLayout = () => {
           <Outlet />
         </Suspense>
       </main>
-      {/* <GlobalStyle /> */}
+      <GlobalStyle />
     </Layout>
   );
 };
